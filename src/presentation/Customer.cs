@@ -19,12 +19,9 @@
 
         public string Statement()
         {
-            var frequentRenterPoints = 0;
             var result = $"Rental record for {GetName()} \n";
             foreach (var rental in _rentals)
             {
-                frequentRenterPoints = rental.GetFrequentRenterPoints();
-
                 //show figures for this rental
                 result += $"\t {rental.GetMovie().GetTitle()}\t{rental.GetCharge()}\n";
 
