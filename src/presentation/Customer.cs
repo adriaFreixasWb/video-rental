@@ -45,31 +45,7 @@
             return result;
         }
 
-        private double AmountFor(Rental aRental)
-        {
-            var result = 0d;
-            switch (aRental.GetMovie().GetPriceCode())
-            {
-                case Movie.REGULAR:
-                    result += 2d;
-                    if (aRental.GetDaysRented() > 2)
-                    {
-                        result += (aRental.GetDaysRented() - 2) * 1.5d;
-                    }
-                    break;
-                case Movie.NEW_RELEASE:
-                    result += aRental.GetDaysRented() * 3d;
-                    break;
-                case Movie.CHILDRENS:
-                    result += 1.5d;
-                    if (aRental.GetDaysRented() > 3)
-                    {
-                        result += (aRental.GetDaysRented() - 3) * 1.5d;
-                    }
-                    break;
-            }
-
-            return result;
-        }
+        private double AmountFor(Rental aRental) =>
+            aRental.GetCharge();
     }
 }
