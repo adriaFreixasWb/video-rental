@@ -34,6 +34,23 @@
             return result;
         }
 
+        public string HtmlStatement()
+        {
+            var result = $"<H1>Rental record for <EM>{GetName()}</EM></H1><P>\n";
+            foreach (var rental in _rentals)
+            {
+                //show figures for this rental
+                result += $"{rental.GetMovie().GetTitle()}: {rental.GetCharge()} <BR>\n";
+
+            }
+            //add footer
+            result += $"<P>You owe <EM>{GetTotalCharge()}</EM></P>\n";
+            result += $"On this rental you earned <EM>{GetTotalFrequentRenterPoints()}</EM> " +
+                "frequent renter points\n";
+
+            return result;
+        }
+
         private int GetTotalFrequentRenterPoints()
         {
             int result = 0;
