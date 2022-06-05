@@ -7,5 +7,10 @@
 
         public override double GetCharge(int daysRented) =>
             daysRented * 3d;
+
+        public override int GetFrequentRenterPoints(int daysRented) =>
+            daysRented > 1
+            ? 2
+            :base.GetFrequentRenterPoints(daysRented);
     }
 }
