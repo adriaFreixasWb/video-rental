@@ -18,32 +18,8 @@
         public string GetTitle() =>
             _title;
 
-        public double GetCharge(int daysRented)
-        {
-            var result = 0d;
-            switch (GetPriceCode())
-            {
-                case REGULAR:
-                    result += 2d;
-                    if (daysRented > 2)
-                    {
-                        result += (daysRented - 2) * 1.5d;
-                    }
-                    break;
-                case NEW_RELEASE:
-                    result += daysRented * 3d;
-                    break;
-                case CHILDRENS:
-                    result += 1.5d;
-                    if (daysRented > 3)
-                    {
-                        result += (daysRented - 3) * 1.5d;
-                    }
-                    break;
-            }
-
-            return result;
-        }
+        public double GetCharge(int daysRented) =>
+            _price.GetCharge(daysRented);
 
         public int GetFrequentRenterPoints(int daysRented)
         {
