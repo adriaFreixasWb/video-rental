@@ -24,12 +24,7 @@
             var result = $"Rental record for {GetName()} \n";
             foreach (var rental in _rentals)
             {
-                //add frequent renter points
-                frequentRenterPoints++;
-                //add bonus for a 2 day rental
-                if (rental.GetMovie().GetPriceCode() == Movie.NEW_RELEASE &&
-                    rental.GetDaysRented() > 1)
-                    frequentRenterPoints++;
+                frequentRenterPoints = rental.GetFrequentRenterPoints();
 
                 //show figures for this rental
                 result += $"\t {rental.GetMovie().GetTitle()}\t{rental.GetCharge()}\n";
@@ -43,6 +38,6 @@
             
             return result;
         }
-                    
+
     }
 }

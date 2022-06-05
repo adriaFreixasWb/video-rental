@@ -42,5 +42,14 @@
 
             return result;
         }
+
+        internal int GetFrequentRenterPoints()
+        {
+            if (GetMovie().GetPriceCode() == Movie.NEW_RELEASE &&
+                GetDaysRented() > 1)
+                return 2;
+            
+            return 1;
+        }
     }
 }
