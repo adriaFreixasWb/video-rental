@@ -65,7 +65,7 @@ namespace VideoRental.Presentation
             }
             //add footer
             result += $"amount owed {totalAlmount}\n";
-            result += $"you earned {frequentRenterPoints} +" +
+            result += $"you earned {frequentRenterPoints} " +
                 "frequent renter points\n";
             
             return result;
