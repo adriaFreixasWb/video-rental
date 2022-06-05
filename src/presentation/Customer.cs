@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VideoRental.Presentation
+﻿namespace VideoRental.Presentation
 {
-    internal class Customer
+    public class Customer
     {
         private readonly string _name;
 
@@ -65,7 +59,7 @@ namespace VideoRental.Presentation
             }
             //add footer
             result += $"amount owed {totalAlmount}\n";
-            result += $"you earned {frequentRenterPoints} +" +
+            result += $"you earned {frequentRenterPoints} " +
                 "frequent renter points\n";
             
             return result;

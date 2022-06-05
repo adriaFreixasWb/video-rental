@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4049ECA8-60A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoRental.Presentation", "src\presentation\VideoRental.Presentation.csproj", "{14B166D3-69D1-43BD-8242-4EECAF59F322}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoRental.Test", "test\VideoRental.Test.csproj", "{BB9DC14B-975C-4F37-8997-87D5381E67C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{14B166D3-69D1-43BD-8242-4EECAF59F322}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14B166D3-69D1-43BD-8242-4EECAF59F322}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14B166D3-69D1-43BD-8242-4EECAF59F322}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB9DC14B-975C-4F37-8997-87D5381E67C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB9DC14B-975C-4F37-8997-87D5381E67C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB9DC14B-975C-4F37-8997-87D5381E67C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB9DC14B-975C-4F37-8997-87D5381E67C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{14B166D3-69D1-43BD-8242-4EECAF59F322} = {4049ECA8-60AC-4B03-854E-F91A14B0D79F}
