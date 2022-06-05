@@ -45,31 +45,31 @@
             return result;
         }
 
-        private double AmountFor(Rental rental)
+        private double AmountFor(Rental aRental)
         {
-            var thisAmount = 0d;
-            switch (rental.GetMovie().GetPriceCode())
+            var result = 0d;
+            switch (aRental.GetMovie().GetPriceCode())
             {
                 case Movie.REGULAR:
-                    thisAmount += 2d;
-                    if (rental.GetDaysRented() > 2)
+                    result += 2d;
+                    if (aRental.GetDaysRented() > 2)
                     {
-                        thisAmount += (rental.GetDaysRented() - 2) * 1.5d;
+                        result += (aRental.GetDaysRented() - 2) * 1.5d;
                     }
                     break;
                 case Movie.NEW_RELEASE:
-                    thisAmount += rental.GetDaysRented() * 3d;
+                    result += aRental.GetDaysRented() * 3d;
                     break;
                 case Movie.CHILDRENS:
-                    thisAmount += 1.5d;
-                    if (rental.GetDaysRented() > 3)
+                    result += 1.5d;
+                    if (aRental.GetDaysRented() > 3)
                     {
-                        thisAmount += (rental.GetDaysRented() - 3) * 1.5d;
+                        result += (aRental.GetDaysRented() - 3) * 1.5d;
                     }
                     break;
             }
 
-            return thisAmount;
+            return result;
         }
     }
 }
