@@ -31,9 +31,19 @@
             }
             //add footer
             result += $"amount owed {GetTotalCharge()}\n";
-            result += $"you earned {frequentRenterPoints} " +
+            result += $"you earned {GetTotalFrequentRenterPoints()} " +
                 "frequent renter points\n";
             
+            return result;
+        }
+
+        private int GetTotalFrequentRenterPoints()
+        {
+            int result = 0;
+            foreach (var rental in _rentals)
+            {
+                result += rental.GetFrequentRenterPoints();
+            }
             return result;
         }
 
