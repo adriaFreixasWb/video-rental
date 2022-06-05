@@ -24,7 +24,7 @@
             var result = $"Rental record for {GetName()} \n";
             foreach (var rental in _rentals)
             {
-                double thisAmount = AmountFor(rental);
+                double thisAmount = rental.GetCharge();
                 //add frequent renter points
                 frequentRenterPoints++;
                 //add bonus for a 2 day rental
@@ -44,8 +44,6 @@
             
             return result;
         }
-
-        private double AmountFor(Rental aRental) =>
-            aRental.GetCharge();
+                    
     }
 }
