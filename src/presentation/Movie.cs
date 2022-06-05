@@ -7,7 +7,7 @@
         public const int NEW_RELEASE = 1;
 
         private readonly string _title;
-        private int _priceCode;
+        private Price _price;
 
         public Movie(string title, int priceCode)
         {
@@ -55,11 +55,24 @@
         }
 
         public int GetPriceCode() =>
-            _priceCode;
+            _price.GetPriceCode();
 
         public void SetPriceCode(int arg)
         {
-            _priceCode=arg;
+            switch (arg)
+            {
+                case REGULAR:
+                    _price = new RegularPrice();
+                    break;
+                case CHILDRENS:
+                    _price = new ChildrensPrice();
+                    break;
+                case NEW_RELEASE:
+                    _price = new NewReleasePrice();
+                    break;
+                default:
+                    throw new ArgumentException("Incorrect price code");
+            }
         }
     }
 }
