@@ -45,6 +45,15 @@
             return result;
         }
 
+        public int GetFrequentRenterPoints(int daysRented)
+        {
+            if (GetPriceCode() == NEW_RELEASE &&
+                daysRented > 1)
+                return 2;
+
+            return 1;
+        }
+
         public int GetPriceCode() =>
             _priceCode;
 

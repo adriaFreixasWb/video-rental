@@ -19,13 +19,7 @@
         public double GetCharge() => 
             _movie.GetCharge(GetDaysRented());
 
-        internal int GetFrequentRenterPoints()
-        {
-            if (GetMovie().GetPriceCode() == Movie.NEW_RELEASE &&
-                GetDaysRented() > 1)
-                return 2;
-            
-            return 1;
-        }
+        internal int GetFrequentRenterPoints() =>
+            _movie.GetFrequentRenterPoints(GetDaysRented());
     }
 }
