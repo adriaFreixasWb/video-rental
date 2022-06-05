@@ -21,14 +21,8 @@
         public double GetCharge(int daysRented) =>
             _price.GetCharge(daysRented);
 
-        public int GetFrequentRenterPoints(int daysRented)
-        {
-            if (GetPriceCode() == NEW_RELEASE &&
-                daysRented > 1)
-                return 2;
-
-            return 1;
-        }
+        public int GetFrequentRenterPoints(int daysRented) => 
+            _price.GetFrequentRenterPoints(daysRented);
 
         public int GetPriceCode() =>
             _price.GetPriceCode();
