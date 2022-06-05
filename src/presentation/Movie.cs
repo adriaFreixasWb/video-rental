@@ -12,7 +12,7 @@
         public Movie(string title, int priceCode)
         {
             _title = title;
-            _priceCode = priceCode;
+            SetPriceCode(priceCode);
         }
 
         public string GetTitle() =>
