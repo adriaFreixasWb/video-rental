@@ -4,18 +4,11 @@
     {
         public abstract int GetPriceCode();
 
-        internal double GetCharge(int daysRented)
+        public virtual double GetCharge(int daysRented)
         {
             var result = 0d;
             switch (GetPriceCode())
             {
-                case Movie.REGULAR:
-                    result += 2d;
-                    if (daysRented > 2)
-                    {
-                        result += (daysRented - 2) * 1.5d;
-                    }
-                    break;
                 case Movie.NEW_RELEASE:
                     result += daysRented * 3d;
                     break;
