@@ -9,9 +9,6 @@
             var result = 0d;
             switch (GetPriceCode())
             {
-                case Movie.NEW_RELEASE:
-                    result += daysRented * 3d;
-                    break;
                 case Movie.CHILDRENS:
                     result += 1.5d;
                     if (daysRented > 3)
