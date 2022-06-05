@@ -24,27 +24,7 @@
             var result = $"Rental record for {GetName()} \n";
             foreach (var rental in _rentals)
             {
-                var thisAmount = 0d;
-                switch (rental.GetMovie().GetPriceCode())
-                {
-                    case Movie.REGULAR:
-                        thisAmount += 2d;
-                        if(rental.GetDaysRented() > 2)
-                        {
-                            thisAmount += (rental.GetDaysRented()-2) * 1.5d;
-                        }
-                        break;
-                    case Movie.NEW_RELEASE:
-                        thisAmount += rental.GetDaysRented() * 3d;
-                        break;
-                    case Movie.CHILDRENS:
-                        thisAmount += 1.5d;
-                        if (rental.GetDaysRented() > 3)
-                        {
-                            thisAmount += (rental.GetDaysRented() - 3) * 1.5d;
-                        }
-                        break;
-                }
+                double thisAmount = AmountFor(rental);
                 //add frequent renter points
                 frequentRenterPoints++;
                 //add bonus for a 2 day rental
@@ -63,6 +43,33 @@
                 "frequent renter points\n";
             
             return result;
+        }
+
+        private double AmountFor(Rental rental)
+        {
+            var thisAmount = 0d;
+            switch (rental.GetMovie().GetPriceCode())
+            {
+                case Movie.REGULAR:
+                    thisAmount += 2d;
+                    if (rental.GetDaysRented() > 2)
+                    {
+                        thisAmount += (rental.GetDaysRented() - 2) * 1.5d;
+                    }
+                    break;
+                case Movie.NEW_RELEASE:
+                    thisAmount += rental.GetDaysRented() * 3d;
+                    break;
+                case Movie.CHILDRENS:
+                    thisAmount += 1.5d;
+                    if (rental.GetDaysRented() > 3)
+                    {
+                        thisAmount += (rental.GetDaysRented() - 3) * 1.5d;
+                    }
+                    break;
+            }
+
+            return thisAmount;
         }
     }
 }
