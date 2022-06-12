@@ -10,4 +10,13 @@ We will start by completeing the [Take your first steps learning C# path](https:
 - [Stora literals arrays](https://docs.microsoft.com/en-us/learn/modules/csharp-arrays/)
 
 Using a partners rainbow application build a random color generator.
- 
+
+## Bonus (Homework)
+
+Create a frequent renter applications that has 3 types of movies
+- Regular (cost 2, points 1)
+- Childrens (cost 1.5, points 1)
+- New releases (cost 3, points 2)
+
+Start with a movie of each kind an print Title, cost per day and points earned per day).
+
