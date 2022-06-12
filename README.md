@@ -18,5 +18,5 @@ Create a frequent renter applications that has 3 types of movies
 - Childrens (cost 1.5, points 1)
 - New releases (cost 3, points 2)
 
-Start with a movie of each kind an print Title, cost per day and points earned per day).
+Start with a movie of each kind an print Title, cost per day and points earned per day.
 
